@@ -15,12 +15,20 @@ $f3 = Base::instance();
 
 // Define a default route
 // https://tostrander.greenriverdev.com/328/hello-fat-free/
-$f3->route('GET /', function() {
+$f3->route('GET /', function($f3) {
     //echo '<h1>Welcome to Week 4</h1>';
+
+    // Add data to the Fat-Free "hive"
+    $f3->set('name', 'Tina');
+
 
     // Render a view page
     $view = new Template();
     echo $view->render('views/info.html');
+});
+
+$f3->route('GET /test', function($f3) {
+    echo "Testing";
 });
 
 // Run Fat-Free
