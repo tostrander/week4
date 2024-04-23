@@ -21,6 +21,16 @@ $f3->route('GET /', function($f3) {
     // Add data to the Fat-Free "hive"
     $f3->set('name', 'Tina');
 
+    // Define an array of fruits and add it to the hive
+    $fruits = array('apple', 'banana', 'orange');
+    $f3->set('fruitList', $fruits);
+
+    // Define an associative array of students
+    $students = array('101'=>'Mason', '102'=>'Tilak', '103'=>'Sage');
+    $f3->set('studentList', $students);
+
+    // Add a number to hive
+    $f3->set('num', 5);
 
     // Render a view page
     $view = new Template();

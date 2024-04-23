@@ -8,8 +8,31 @@
     <title>Week 4 - Templating</title>
 </head>
 <body>
-    <h1>Templating in Fat-Free!!!***</h1>
+    <h1>Templating in Fat-Free</h1>
     <h2>{{ @name }}</h2>
     <p>My name is {{ @name }}</p>
+
+    <h2>A list of fruits</h2>
+    <ul>
+    <repeat group="{{ @fruitList }}" value="{{ @fruit }}">
+        <li>{{ @fruit }}</li>
+    </repeat>
+    </ul>
+
+    <p>Imploded string of fruits: {{ implode(", ", @fruitList) }}</p>
+
+    <repeat group="{{ @studentList }}" key="{{ @sid }}" value="{{ @name }}">
+        <p>{{ @sid }} - {{ @name }}</p>
+    </repeat>
+
+    <p>The number is {{ @num }}</p>
+    <check if="{{ @num == 5 }}">
+        <p>High Five!</p>
+    </check>
+    <check if="{{ @num == 10 }}">
+        <true><p>You are perfect</p></true>
+        <false><p>You are not perfect... keep trying!</p></false>
+    </check>
+
 </body>
 </html>
